@@ -26,12 +26,38 @@ public class Main {
 
 
         // 3.  -----------------------------------------------------------------------
-        // Есть строка string распечатать ее в виде ! string!
+        // Есть строка string распечатать ее в виде !string!
 
         Printable printable = s ->{
             System.out.println("!" +s+ "!");
         };
         printable.print("string");  // !string!
+
+        // написать лямбда выражение такое что если длина строки =4, то вернуть четыре звездочки
+        // иначе вернуть строку без изменений
+
+
+        Transformable transformable = in-> in.length() ==4 ? in = "****" : in;
+
+        System.out.println("Transformable"); //Transformable
+        System.out.println(transformable.modify("ab")); // ab
+        System.out.println(transformable.modify("abcd")); // ****
+
+        // написать лямбда выражение такое что будет печататься
+        // "Hello World"
+
+        Producable producable = () ->"Hello World";
+
+        System.out.println("Producable");
+        System.out.println(producable.produce()); //Hello World
+
+
+
+
+
+
+
+
 
     }
 
